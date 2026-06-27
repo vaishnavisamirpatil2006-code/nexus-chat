@@ -26,7 +26,7 @@ export default function App() {
   const isTyping     = typingRoomId === currentRoomId;
   const typingMember = isTyping
     ? MEMBERS.find(m => {
-        const pool = (rooms.find(r => r.id === currentRoomId)?.messages ?? []);
+       
         // pick last bot author as "typing" member — fallback to first non-me member
         return m.id !== ME.id;
       })
