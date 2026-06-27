@@ -11,7 +11,7 @@ import ToastContainer from './components/Toast';
 
 export default function App() {
   const {
-    rooms, currentRoom, currentRoomId, switchRoom,
+    currentRoom, currentRoomId, switchRoom,
     getMember, ME,
     replyTo, setReplyTo, clearReply,
     typingRoomId,
