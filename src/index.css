@@ -1,0 +1,82 @@
+/* ── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Design tokens (light mode) ────────────────────────────────────────────── */
+:root {
+  --sidebar-w:  260px;
+  --header-h:   56px;
+
+  --accent:       #534AB7;
+  --accent-light: #EEEDFE;
+  --accent-mid:   #7F77DD;
+
+  --bg:    #ffffff;
+  --bg2:   #f5f4f0;
+  --bg3:   #f0efe9;
+
+  --txt:   #1a1a18;
+  --txt2:  #5f5e5a;
+  --txt3:  #9b9a95;
+
+  --border:  rgba(0,0,0,0.12);
+  --border2: rgba(0,0,0,0.22);
+
+  --green:       #1D9E75;
+  --green-light: #E1F5EE;
+  --amber:       #BA7517;
+  --amber-light: #FAEEDA;
+  --red:         #E24B4A;
+  --red-light:   #FCEBEB;
+
+  --radius:    8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* ── Dark mode ─────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:    #1c1c1a;
+    --bg2:   #252522;
+    --bg3:   #222220;
+
+    --txt:   #f0efea;
+    --txt2:  #b4b2a9;
+    --txt3:  #6e6c66;
+
+    --border:  rgba(255,255,255,0.10);
+    --border2: rgba(255,255,255,0.18);
+
+    --accent-light: rgba(83,74,183,0.18);
+  }
+}
+
+/* ── Scrollbars ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--txt3); }
+
+/* ── Animations ────────────────────────────────────────────────────────────── */
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%           { transform: translateY(-4px); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(20px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* ── Utilities ─────────────────────────────────────────────────────────────── */
+button { font-family: inherit; }
+textarea { font-family: inherit; }
+input { font-family: inherit; }
+input::placeholder { color: var(--txt3); }
+textarea::placeholder { color: var(--txt3); }
